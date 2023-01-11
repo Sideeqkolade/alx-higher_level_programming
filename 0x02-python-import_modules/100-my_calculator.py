@@ -15,6 +15,6 @@ if __name__ == "__main__":
         sys.exit(1)
 
     else:
-    a = int(sys.argv[1])
-    b = int(sys.argv[2])
-    print("{} {} {} = {}".format(a, sys.argv[2], b, ops[sys.argv[2]](a, b)))
+        a = int(sys.argv[1])
+        b = int(sys.argv[2])
+        print("{} {} {} = {}".format(a, sys.argv[2], b, ops[sys.argv[2]](a, b)))
