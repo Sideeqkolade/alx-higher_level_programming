@@ -1,4 +1,4 @@
-#!usr/bin/python3
+#!/usr/bin/python3
 # Square - an empty class that defines a square
 """an empty class"""
 
