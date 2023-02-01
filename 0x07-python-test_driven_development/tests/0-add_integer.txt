@@ -1,0 +1,66 @@
+
+===============================
+ How to use 0-add_integer.py
+===============================
+
+
+This module defines an integer addition function ``add_integer(a, b=98)``.
+
+USAGE
+======
+
+``add_intgers(a, b)`` returns the addition of its arguments.  For numbers,
+that value is equivalent to using the ``+`` operator.
+
+
+::
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+    >>> add_integer(2, 3)
+    5
+
+::
+
+    >>> add_integer(2, -3)
+    -1
+
+The function also works with floating-point values.
+
+::
+
+    >>> add_integer(2.0, 3.0)
+    5
+
+Floating and non-floating point values can be combined.
+
+::
+
+    >>> add_integer(2.0, 3)
+    5
+
+The second argument is optional - by default, it is 98.
+
+::
+
+    >>> add_integer(2)
+    100
+
+Non-Numbers
+===========
+
+``add_integer()`` expects that both arguments are either integers or floats.
+If either argument is a non-integer and non-float, a TypeError is raised:
+
+::
+
+    >>> add_integer("hello", 3)
+    Traceback (most recent call last):
+    	raise TypeError("a must be an integer")
+    TypeError: a must be an integer
+
+::
+
+    >>> add_integer(2, "hello")
+    Traceback (most recent call last):
+    	raise TypeError("b must be an integer")
+    TypeError: b must be an integer
