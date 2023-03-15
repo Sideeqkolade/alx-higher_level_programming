@@ -3,6 +3,5 @@
 -- The user_0d_1 password should be set to user_0d_1_pwd
 -- If the user user_0d_1 already exists, your script should not fai
 
-CREATE USER user_0d_1 IF NOT EXISTS IDENTIFIED BY 'user_0d_1_pwd';
-GRANT ALL ON user_0d_1*.*;
-
+CREATE USER IF NOT EXISTS user_0d_1 IDENTIFIED BY 'user_0d_1_pwd';
+GRANT ALL ON *.* TO 'user_0d_1'@'localhost';
