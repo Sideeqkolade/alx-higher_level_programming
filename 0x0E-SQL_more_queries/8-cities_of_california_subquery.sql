@@ -7,7 +7,7 @@
 
 
 USE hbtn_0d_usa;
-SELECT cities
+SELECT name
 FROM states 
 WHERE name = 'California';
-ORDER BY ASC;
+ORDER BY cities.id ASC;
