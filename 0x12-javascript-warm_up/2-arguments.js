@@ -2,6 +2,7 @@
 // a script that prints a message depending of the number of arguments passed
 // If no arguments are passed to the script, print “No argument”
 // Otherwise, print “Arguments found”
+// You must use console.log(...) to print all output
 
 const arg = process.argv.slice(2);
 
