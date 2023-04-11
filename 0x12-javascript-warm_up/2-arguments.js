@@ -4,8 +4,8 @@
 // Otherwise, print “Arguments found”
 // You must use console.log(...) to print all output
 // You are not allowed to use var
-
 const arg = process.argv.slice(2);
+
 if (arg.length === 0) {
   console.log('No argument');
 } else if (arg.length === 1) {
