@@ -7,20 +7,19 @@
 //  You must use console.log(...) to print all output
 //  You are not allowed to use var
 
-const second_max = (arg) => {
+const secondMax = (arg) => {
   const max = Math.max(...arg);
   let min = Math.min(...arg);
-for (const i of arg) {
+  for (const i of arg) {
     if (i > min && i < max) {
       min = i;
     }
   }
   return min;
-}
+};
 const args = process.argv.slice(2);
 if (args.length === 0 || args.length === 1) {
   console.log(0);
 } else {
-  console.log(second_max(args));
+  console.log(secondMax(args));
 }
-
