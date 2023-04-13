@@ -1,0 +1,30 @@
+#!/usr/bin/node
+
+//  a class Rectangle that defines a rectangle
+//  You must use the class notation for defining your class
+//  You must use the class notation for defining your class
+//  Initialize the instance attribute width with the value of w
+//  Initialize the instance attribute height with the value of h
+//  If w or h is equal to 0 or not a positive integer, create an empty object
+//  Create an instance method called print() that prints the rectangle using the character X
+
+class Rectangle {
+  constructor (w, h) {
+    if ((w > 0) && (h > 0)) {
+      this.width = w;
+      this.height = h;
+    }
+  }
+
+  print () {
+    for (let i = 0; i < this.width; i++) {
+      let rect = '';
+      for (let j = 0; j < this.height; j++) {
+        rect += 'X';
+      }
+      console.log(rect);
+    }
+  }
+}
+
+module.exports = Rectangle;
