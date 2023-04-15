@@ -7,6 +7,7 @@
 import MySQLdb
 import sys
 
+
 if __name__ == "__main__":
     conn = MySQLdb.connect(
             host='localhost',
@@ -18,7 +19,6 @@ if __name__ == "__main__":
 
     cur = conn.cursor()
     state = sys.argv[4]
-
     cur.execute("SELECT * FROM states WHERE name LIKE %s", (state, ))
     rows = cur.fetchall()
     for row in rows:
