@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""a script that lists all states with a name starting with N  the database hbtn_0e_0_usa"""
+"""a script that lists all states with int the database hbtn_0e_0_usa"""
 import MySQLdb
 import sys
 
@@ -15,7 +15,8 @@ if __name__ == "__main__":
     cur = conn.cursor()
     """this creates the cursor for connection"""
 
-    cur.execute("SELECT * FROM states WHERE name  LIKE BINARY 'N%' ORDER BY states.id")
+    cur.execute("SELECT * FROM states WHERE name
+                LIKE BINARY 'N%' ORDER BY states.id")
     rows = cur.fetchall()
     for row in rows:
         print(row)
