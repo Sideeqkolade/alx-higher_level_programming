@@ -15,6 +15,6 @@ if __name__ == "__main__":
     session = Session()
     users = session.query(State.name, City.id, City.name).filter(
                         State.id == City.state_id).order_by(City.id).all()
-    for user in users:
-        print(f"{user.name}: ({user.id}) {user.name}")
+    for State, City.id, City.name in users:
+        print(f"{State}: ({City.id}) {City.name}")
     session.commit()
