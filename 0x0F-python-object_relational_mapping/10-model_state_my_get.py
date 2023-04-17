@@ -16,7 +16,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    user = session.query(State).filter(State.name == (name, ))
+    user = session.query(State).filter(State.name == (name, )).all()
     if user:
         print(user[0].id)
     else:
