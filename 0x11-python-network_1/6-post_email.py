@@ -16,5 +16,5 @@ if __name__ == "__name__":
     url = sys.argv[1]
     email = sys.argv[2]
     data = {'email': email}
-    response = requests.post(url, data=data)
+    response = requests.post(url, data)
     print(response.text)
