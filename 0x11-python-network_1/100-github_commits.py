@@ -15,12 +15,7 @@ if __name__ == "__main__":
         print("Usage: ./100-github_commits.py <repository name> <owner name>")
         sys.exit(1)
 
-    url = "https://api.github.com/repos/{}/{}/commits".format(
-            sys.argv[1], sys.argv[2])
-
+    url = f"https://api.github.com/repos/{sys.argv[2]}/{sys.argv[1]}/commits"
     response = requests.get(url)
-    commits = response.json()
-    for i in range(min(10, len(commits))):
-        print("{}: {}".format(
-            commits[i].get("sha"),
-            commits[i].get("commit").get("author").get("name")))
+    for commit in response.json()[:10]:
+        print(f"{commit['sha']}: {commit['commit']['author']['name']}")
