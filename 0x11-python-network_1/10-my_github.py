@@ -27,11 +27,4 @@ if __name__ == "__main__":
     auth = (username, password)
 
     response = requests.get(url, auth=auth)
-    if response.status_code == 200:
-        response_json = response.json()
-        user_id = response_json.get("id")
-        print(user_id)
-
-    else:
-        print(f"Error: {response.status_code} {response.reason}")
-        sys.exit(1)
+    print(response.json().get("id"))
