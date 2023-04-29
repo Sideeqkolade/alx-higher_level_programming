@@ -22,10 +22,7 @@ if __name__ == "__main__":
 
     response = requests.get(url)
     commits = response.json()
-    try:
-        for i in range(10):
-            print("{}: {}".format(
-                commits[i].get("sha"),
-                commits[i].get("commit").get("author").get("name")))
-    except IndexError:
-        pass
+    for i in range(min(10, len(commits))):
+        print("{}: {}".format(
+            commits[i].get("sha"),
+            commits[i].get("commit").get("author").get("name")))
