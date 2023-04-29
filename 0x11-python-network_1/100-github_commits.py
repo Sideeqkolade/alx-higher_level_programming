@@ -15,10 +15,8 @@ if __name__ == "__main__":
         print("Usage: ./100-github_commits.py <repository name> <owner name>")
         sys.exit(1)
 
-    repository_name = sys.argv[1]
-    owner_name = sys.argv[2]
     url = "https://api.github.com/repos/{}/{}/commits".format(
-            repository_name, owner_name)
+            sys.argv[1], sys.argv[2])
 
     response = requests.get(url)
     commits = response.json()
