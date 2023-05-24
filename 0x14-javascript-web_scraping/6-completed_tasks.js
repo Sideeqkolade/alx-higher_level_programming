@@ -4,35 +4,26 @@
 // Only print users with completed task
 // You must use the module request
 const request = require('request');
-const url = 'https://jsonplaceholder.typicode.com/todos';
+const url = process.argv[2];
 
-// Make a GET request to the API URL
-request.get(url, (error, response, body) => {
+request(url, function (error, response, body) {
   if (error) {
     console.log(error);
-  }
-
-  if (response.statusCode !== 200) {
-    console.log('Unable to fetch the task data.');
-  }
-
-  // Parse the response body
-  const tasks = JSON.parse(body);
-
-  // Create an object to store the task counts by user ID
-  const taskCounts = {};
-
-  // Count the completed tasks by user ID
-  tasks.forEach(task => {
-    if (task.completed) {
-      if (taskCounts[task.userId]) {
-        taskCounts[task.userId]++;
-      } else {
-        taskCounts[task.userId] = 1;
+  } else if (response.statusCode === 200) {
+    const completed = {};
+    const tasks = JSON.parse(body);
+    for (const i in tasks) {
+      const task = tasks[i];
+      if (task.completed === true) {
+        if (completed[task.userId] === undefined) {
+          completed[task.userId] = 1;
+        } else {
+          completed[task.userId]++;
+        }
       }
     }
-  });
-
-  // Print the task counts for users with completed tasks in dictionary format
-  console.log(taskCounts);
+    console.log(completed);
+  } else {
+    console.log('An error occured. Status code: ' + response.statusCode);
+  }
 });
